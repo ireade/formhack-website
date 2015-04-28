@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html, body {
   background-color: #fafafa; }
 
@@ -182,10 +181,7 @@ pre {
 .highlight .il {
   color: #099; }
 
-/* 
- * FormHack v1.0.0 (formhack.io)
- * Copyright © 2015 Ire Aderinokun with MIT Licence
-*/
+/* FormHack v1.0.0 (formhack.io) */
 /* Global Reset Styles ------------------ */
 input,
 textarea,
@@ -196,11 +192,11 @@ button,
 legend,
 fieldset {
   box-sizing: border-box;
+  outline: none;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   color: #282828;
   vertical-align: top;
-  outline: none;
   display: block;
   margin: 10px 0; }
 
@@ -322,8 +318,8 @@ input[type="image"] {
   width: 100%;
   max-width: 200px;
   background-color: gainsboro;
-  cursor: pointer;
   padding: 8px;
+  cursor: pointer;
   color: #282828;
   font-weight: 700;
   -webkit-appearance: none;

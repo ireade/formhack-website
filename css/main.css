@@ -209,7 +209,7 @@ label {
   margin: 10px 0; }
 
 /* Input & Textarea ------------------ */
-/* Fields with stnadard width */
+/* Fields with standard width */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -238,7 +238,7 @@ textarea {
   border-radius: 5px;
   border: 1px solid #c8c8c8; }
 
-/* Fields with stnadard height */
+/* Fields with standard height */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -351,9 +351,17 @@ button:focus {
   background-color: gainsboro;
   border-color: #c8c8c8; }
 
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: #c8c8c8 solid 2px; }
+
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
-input[type="reset"]:hover {
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
   background-color: #c8c8c8;
   color: #282828; }

@@ -233,8 +233,6 @@ textarea {
   background-color: #fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #c8c8c8; }
 
@@ -299,8 +297,6 @@ fieldset {
   padding: 10px 25px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #c8c8c8; }
 
@@ -326,8 +322,6 @@ input[type="image"] {
   -moz-appearance: none;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #c8c8c8; }
 

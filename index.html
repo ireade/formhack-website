@@ -24,7 +24,7 @@
 
     <p>If you have any questions or suggestions for how I can make this better, tweet me at <a href="https://twitter.com/ireaderinokun">@ireaderinokun</a>.</p>
 
-    <p><a href="https://github.com/ireade/formhack">Download from Github</a> (SCSS and SASS versions available)</p>
+   
 
     <p><a class="twitter-share-button"
       href="https://twitter.com/share"
@@ -36,6 +36,20 @@
     window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
     </script> 
     </p>
+
+
+
+    <h3>Installation</h3>
+
+    <p>1. <a href="https://github.com/ireade/formhack">Download from Github</a> (SCSS and SASS versions available)</p>
+
+
+    <p>2. Clone the repo</p>
+    <div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/ireade/formhack.git</code></pre></div>
+  
+    <p>3. Install via bower</p>
+    <div class="highlight"><pre><code class="language-bash" data-lang="bash">bower install formhack</code></pre></div>
+
 
 
   </section>
@@ -125,7 +139,7 @@
   <label for="">Input Type Radio</label>
   <input type="radio" name="input-type-radio1"> Value 1<br>
   <input type="radio" name="input-type-radio2"> Value 2<br>
-  <input type="radio" name="input-type-radio"3> Value 3<br>
+  <input type="radio" name="input-type-radio3"> Value 3<br>
 
   <label for="">Input Type Range</label>
   <input type="range" name="input-type-range">
@@ -260,11 +274,11 @@
 
   	<legend>Legend Title</legend>
 
-	<label for="">Input</label>
-  	<input type="text">
+	<label for="input-text">Input</label>
+  	<input type="text" id="input-text">
 
-  	<label for="">Another Input</label>
-  	<input type="text">
+  	<label for="input-password">Another Input</label>
+  	<input type="text" id="input-password">
   	
   </fieldset>
 

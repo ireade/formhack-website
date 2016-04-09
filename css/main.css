@@ -34,6 +34,13 @@ a,
 a:visited {
   color: #67b3dd; }
 
+em {
+  background-color: rgba(103, 179, 221, 0.2);
+  font-style: italic;
+  padding: 3px 5px;
+  font-weight: 600;
+  display: inline-block; }
+
 /**
  * Syntax highlighting styles
  */
@@ -359,3 +366,20 @@ input[type="submit"]:focus,
 input[type="reset"]:focus {
   background-color: #c8c8c8;
   color: #282828; }
+
+/* */
+.example-toggles {
+  display: flex; }
+  .example-toggles button.toggle {
+    margin: 0;
+    width: auto;
+    background-color: #e6e6e6;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0; }
+  .example-toggles button.toggle.active,
+  .example-toggles button.toggle:hover {
+    background-color: #fff; }
+
+.example-content .highlight {
+  margin-top: 0; }

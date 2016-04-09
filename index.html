@@ -20,6 +20,8 @@
 
     <p>FormHack is a hackable <a href="http://sass-lang.com">SASS</a>-based form reset. Although there are standard css resets for forms out there, I wanted to created one that I could easily customize for any site, without having to worry about cross-browser compatibility and differences. </p>
 
+    <p><em>v1.2.0 Now supports native CSS using CSS Custom Variables!</em></p>
+
     <p>FormHack works by providing a few variables that allow you to change some common attributes such as border-radius, input height/width, and colours. By changing these attributes, you will get a beautiful form that is consistent across all major browsers. I have also organised the code in a way that is (hopefully) easy for you to edit if you want to alter more than the given settings.</p>
 
     <p>If you have any questions or suggestions for how I can make this better, tweet me at <a href="https://twitter.com/ireaderinokun">@ireaderinokun</a>.</p>
@@ -45,10 +47,12 @@
 
 
     <p>2. Clone the repo</p>
-    <div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/ireade/formhack.git</code></pre></div>
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash">    git clone https://github.com/ireade/formhack.git
+    </code></pre></figure>
   
     <p>3. Install via bower</p>
-    <div class="highlight"><pre><code class="language-bash" data-lang="bash">bower install formhack</code></pre></div>
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash">    bower install formhack
+    </code></pre></figure>
 
 
 
@@ -60,44 +64,133 @@
 
     <p>This is an example config which shows the default settings:</p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">Font</span>
-<span class="o">$</span><span class="nt">fh-font-family</span><span class="o">:</span> <span class="s1">&#39;Raleway&#39;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-font-size</span><span class="o">:</span> <span class="nt">16px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-font-color</span><span class="o">:</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">40</span><span class="o">,</span> <span class="nt">40</span><span class="o">,</span> <span class="nt">40</span><span class="o">);</span>
 
-<span class="o">//</span> <span class="nt">Borders</span>
-<span class="o">$</span><span class="nt">fh-border-radius</span><span class="o">:</span> <span class="nt">5px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-border-width</span><span class="o">:</span> <span class="nt">1px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-border-style</span><span class="o">:</span> <span class="nt">solid</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-border-color</span><span class="o">:</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">200</span><span class="o">,</span> <span class="nt">200</span><span class="o">,</span> <span class="nt">200</span><span class="o">);</span>
+<div class="example-toggles">
+  <button class="toggle active" id="btn-scss">SCSS</button>
+  <button class="toggle" id="btn-sass">SASS</button>
+  <button class="toggle" id="btn-css">CSS</button>
+</div>
+<div class="example-content" id="example-scss">
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Font
+</span><span class="nv">$fh-font-family</span><span class="p">:</span> <span class="s1">'Raleway'</span><span class="o">,</span> <span class="nb">sans-serif</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-font-size</span><span class="p">:</span> <span class="m">16px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-font-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">40</span><span class="o">,</span> <span class="m">40</span><span class="o">,</span> <span class="m">40</span><span class="p">)</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Inputs</span><span class="o">,</span> <span class="nt">Textareas</span><span class="o">,</span> <span class="nt">Select</span><span class="o">,</span> <span class="nt">Option</span>
-<span class="o">$</span><span class="nt">fh-input-height</span><span class="o">:</span> <span class="nt">40px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-input-width</span><span class="o">:</span> <span class="nt">100</span><span class="o">%;</span>
-<span class="o">$</span><span class="nt">fh-input-max-width</span><span class="o">:</span> <span class="nt">400px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-input-bg-color</span><span class="o">:</span> <span class="nf">#fff</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-focus-bg-color</span><span class="o">:</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">220</span><span class="o">,</span> <span class="nt">220</span><span class="o">,</span> <span class="nt">220</span><span class="o">);</span>
-<span class="o">$</span><span class="nt">fh-focus-border-color</span><span class="o">:</span> <span class="o">$</span><span class="nt">fh-border-color</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-focus-font-color</span><span class="o">:</span> <span class="o">$</span><span class="nt">fh-font-color</span><span class="o">;</span>
+<span class="c1">// Borders
+</span><span class="nv">$fh-border-radius</span><span class="p">:</span> <span class="m">5px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-border-width</span><span class="p">:</span> <span class="m">1px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-border-style</span><span class="p">:</span> <span class="nb">solid</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-border-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="p">)</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Select</span> <span class="nt">Vendor</span> <span class="nt">Styling</span>
-<span class="o">$</span><span class="nt">fh-allow-vendor-styling</span><span class="o">:</span> <span class="nt">true</span><span class="o">;</span>
+<span class="c1">// Inputs, Textareas, Select, Option
+</span><span class="nv">$fh-input-height</span><span class="p">:</span> <span class="m">40px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-input-width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-input-max-width</span><span class="p">:</span> <span class="m">400px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-input-bg-color</span><span class="p">:</span> <span class="mh">#fff</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-focus-bg-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="p">)</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-focus-border-color</span><span class="p">:</span> <span class="nv">$fh-border-color</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-focus-font-color</span><span class="p">:</span> <span class="nv">$fh-font-color</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Fieldset</span> <span class="o">&amp;</span> <span class="nt">Legend</span> <span class="nt">Styling</span>
-<span class="o">$</span><span class="nt">fh-fieldset-bare</span><span class="o">:</span> <span class="nt">false</span><span class="o">;</span>
+<span class="c1">// Select Vendor Styling
+</span><span class="nv">$fh-allow-select-vendor-styling</span><span class="p">:</span> <span class="bp">true</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Buttons</span> <span class="o">&amp;</span> <span class="nt">Input</span> <span class="nt">Submits</span>
-<span class="o">$</span><span class="nt">fh-button-height</span><span class="o">:</span> <span class="nt">40px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-button-width</span><span class="o">:</span> <span class="nt">100</span><span class="o">%;</span>
-<span class="o">$</span><span class="nt">fh-button-max-width</span><span class="o">:</span> <span class="nt">200px</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-button-font-color</span><span class="o">:</span> <span class="o">$</span><span class="nt">fh-font-color</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-button-bg-color</span><span class="o">:</span> <span class="o">$</span><span class="nt">fh-focus-bg-color</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-button-hover-bg-color</span><span class="o">:</span> <span class="o">$</span><span class="nt">fh-border-color</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-button-hover-font-color</span><span class="o">:</span> <span class="o">$</span><span class="nt">fh-font-color</span><span class="o">;</span>
+<span class="c1">// Fieldset &amp; Legend Styling
+</span><span class="nv">$fh-fieldset-bare</span><span class="p">:</span> <span class="bp">false</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Layout</span>
-<span class="o">$</span><span class="nt">fh-centered</span><span class="o">:</span> <span class="nt">false</span><span class="o">;</span>
-<span class="o">$</span><span class="nt">fh-display</span><span class="o">:</span> <span class="nt">block</span><span class="o">;</span></code></pre></div>
+<span class="c1">// Buttons &amp; Input Submits
+</span><span class="nv">$fh-button-height</span><span class="p">:</span> <span class="m">40px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-button-width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-button-max-width</span><span class="p">:</span> <span class="m">200px</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-button-font-color</span><span class="p">:</span> <span class="nv">$fh-font-color</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-button-bg-color</span><span class="p">:</span> <span class="nv">$fh-focus-bg-color</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-button-hover-bg-color</span><span class="p">:</span> <span class="nv">$fh-border-color</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-button-hover-font-color</span><span class="p">:</span> <span class="nv">$fh-font-color</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+
+<span class="c1">// Layout
+</span><span class="nv">$fh-centered</span><span class="p">:</span> <span class="bp">false</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$fh-display</span><span class="p">:</span> <span class="nb">block</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span></code></pre></figure>
+</div>
+<div class="example-content" id="example-sass">
+<figure class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="c1">// Font
+</span><span class="nv">$fh-font-family</span><span class="p">:</span> <span class="s1">'Raleway'</span><span class="o">,</span> <span class="nb">sans-serif</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-font-size</span><span class="p">:</span> <span class="m">16px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-font-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">40</span><span class="o">,</span> <span class="m">40</span><span class="o">,</span> <span class="m">40</span><span class="p">)</span> <span class="o">!</span><span class="nb">default</span>
+
+<span class="c1">// Borders
+</span><span class="nv">$fh-border-radius</span><span class="p">:</span> <span class="m">5px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-border-width</span><span class="p">:</span> <span class="m">1px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-border-style</span><span class="p">:</span> <span class="nb">solid</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-border-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="p">)</span> <span class="o">!</span><span class="nb">default</span>
+
+<span class="c1">// Inputs, Textareas, Select, Option
+</span><span class="nv">$fh-input-height</span><span class="p">:</span> <span class="m">40px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-input-width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-input-max-width</span><span class="p">:</span> <span class="m">400px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-input-bg-color</span><span class="p">:</span> <span class="mh">#fff</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-focus-bg-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="p">)</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-focus-border-color</span><span class="p">:</span> <span class="nv">$fh-border-color</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-focus-font-color</span><span class="p">:</span> <span class="nv">$fh-font-color</span> <span class="o">!</span><span class="nb">default</span>
+
+<span class="c1">// Select Vendor Styling
+</span><span class="nv">$fh-allow-select-vendor-styling</span><span class="p">:</span> <span class="bp">true</span> <span class="o">!</span><span class="nb">default</span>
+
+<span class="c1">// Fieldset &amp; Legend Styling
+</span><span class="nv">$fh-fieldset-bare</span><span class="p">:</span> <span class="bp">false</span> <span class="o">!</span><span class="nb">default</span>
+
+<span class="c1">// Buttons &amp; Input Submits
+</span><span class="nv">$fh-button-height</span><span class="p">:</span> <span class="m">40px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-button-width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-button-max-width</span><span class="p">:</span> <span class="m">200px</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-button-font-color</span><span class="p">:</span> <span class="nv">$fh-font-color</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-button-bg-color</span><span class="p">:</span> <span class="nv">$fh-focus-bg-color</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-button-hover-bg-color</span><span class="p">:</span> <span class="nv">$fh-border-color</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-button-hover-font-color</span><span class="p">:</span> <span class="nv">$fh-font-color</span> <span class="o">!</span><span class="nb">default</span>
+
+<span class="c1">// Layout
+</span><span class="nv">$fh-centered</span><span class="p">:</span> <span class="bp">false</span> <span class="o">!</span><span class="nb">default</span>
+<span class="nv">$fh-display</span><span class="p">:</span> <span class="nb">block</span> <span class="o">!</span><span class="nb">default</span></code></pre></figure>
+</div>
+<div class="example-content" id="example-css">
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nd">:root</span> <span class="p">{</span>
+  <span class="c">/* Font */</span>
+  <span class="py">--fh-font-family</span><span class="p">:</span> <span class="s2">'Raleway'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="py">--fh-font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="py">--fh-font-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">40</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">40</span><span class="p">);</span>
+
+  <span class="c">/* Borders */</span>
+  <span class="py">--fh-border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="py">--fh-border-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="py">--fh-border-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="py">--fh-border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
+
+  <span class="c">/* Inputs, Textareas, Select, Option */</span>
+  <span class="py">--fh-input-height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="py">--fh-input-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="py">--fh-input-max-width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="py">--fh-input-bg-color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="py">--fh-focus-bg-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">220</span><span class="p">,</span> <span class="m">220</span><span class="p">,</span> <span class="m">220</span><span class="p">);</span>
+  <span class="py">--fh-focus-border-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--fh-border-color</span><span class="p">);</span>
+  <span class="py">--fh-focus-font-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--fh-font-color</span><span class="p">);</span>
+
+  <span class="c">/* Select Vendor Styling */</span>
+  <span class="py">--fh-select-vendor-styling</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="c">/* comment this out to maintain vendor styling */</span>
+
+
+  <span class="c">/* Buttons &amp; Input Submits */</span>
+  <span class="py">--fh-button-height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="py">--fh-button-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="py">--fh-button-max-width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="py">--fh-button-font-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--fh-font-color</span><span class="p">);</span>
+  <span class="py">--fh-button-bg-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--fh-focus-bg-color</span><span class="p">);</span>
+  <span class="py">--fh-button-hover-bg-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--fh-border-color</span><span class="p">);</span>
+  <span class="py">--fh-button-hover-font-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--fh-font-color</span><span class="p">);</span>
+
+  <span class="c">/* Layout */</span>
+  <span class="py">--fh-layout-display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="py">--fh-layout-margin</span><span class="p">:</span> <span class="m">10px</span> <span class="m">0</span><span class="p">;</span> <span class="c">/* change to "10px auto" to center */</span>
+  <span class="py">--fh-layout-text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+</div>
 
 <p>With these default settings, you can acheive the styling below:</p>
 
@@ -294,6 +387,38 @@
 
     ga('create', 'UA-60256750-3', 'auto');
     ga('send', 'pageview');
+
+  </script>
+
+  <script type="text/javascript">
+    
+  var toggleButtons = document.getElementsByClassName('toggle');
+
+  for ( var i = 0; i < toggleButtons.length; i++ ) {
+
+    toggleButtons[i].addEventListener("click", function(event) {
+
+      var ID = this.id;
+      var example = ID.split("-")[1];
+      var exampleElement = document.getElementById("example-"+example);
+
+
+      document.getElementsByClassName('active')[0].classList.remove('active');
+      this.classList.add('active')
+
+
+      var examples = document.getElementsByClassName('example-content');
+      
+      for ( var x = 0; x < examples.length; x++ ) {
+        examples[x].style.display = "none";
+      }
+
+      exampleElement.style.display = "block";
+
+
+    })
+  }
+
 
   </script>
 </div>
